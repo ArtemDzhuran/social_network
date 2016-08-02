@@ -8,12 +8,12 @@ use App\Http\Requests;
 
 class AuthController extends Controller
 {
-    function login() {
+    public function login() {
 
       return view('auth.login');
     }
 
-    function register(){
+    public function register(){
 
       return view('auth.register');
     }
