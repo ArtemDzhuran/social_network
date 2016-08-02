@@ -1,0 +1,21 @@
+@import ../../globals/global-variables
+@import common
+
+.input
+  @extend %form-control
+  padding-left: 6px
+  width: 100%
+  &.input-block
+    @extend %form-control-block
+  &.input-circle
+    @extend %form-control-circle
+
+.textarea
+  @extend %form-control
+  width: inherit
+  height: inherit
+  border: 1px solid #ccc
+  &.textarea-block
+    @extend %form-control-block
+  &.textarea-circle
+    @extend %form-control-circle

@@ -1,0 +1,16 @@
+@import common
+
+.btn
+  @extend %form-control
+  display: inline-block
+  text-align: center
+  font-weight: 700
+  vertical-align: middle
+  white-space: nowrap
+  cursor: pointer
+  &:hover
+    transition: all 1s
+  &.btn-block
+    @extend %form-control-block
+  &.btn-circle
+    @extend %form-control-circle

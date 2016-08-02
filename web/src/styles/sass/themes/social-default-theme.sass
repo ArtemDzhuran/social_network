@@ -1,0 +1,64 @@
+$styles: 'default', 'primary', 'success', 'warning', 'danger'
+
+$default-color: #fff
+$default-border: 1px solid #ccc
+$default-hover-color: #ccc
+
+$primary-color: #578ebe
+$primary-hover-color: #1f78b5
+$primary-border: 1px solid #1f78b5
+
+$success-color: #36918b
+$success-hover-color: #338983
+$success-border: 1px solid #338983
+
+$warning-color: #c29d0b
+$warning-hover-color: #a08209
+$warning-border: 1px solid #a08209
+
+$danger-color: #e35b5a
+$danger-hover-color: #dc302e
+$danger-border: 1px solid #dc302e
+
+%default-style
+  color: #333
+  background-color: $default-color
+  border: $default-border
+  &:hover
+    background-color: $default-hover-color
+
+%primary-style
+  color: #fff
+  background-color: $primary-color
+  border: $primary-border
+  &:hover
+    background-color: $primary-hover-color
+
+%success-style
+  color: #fff
+  background-color: $success-color
+  border: $success-border
+  &:hover
+    background-color: $success-hover-color
+
+%warning-style
+  color: #fff
+  background-color: $warning-color
+  border: $warning-border
+  &:hover
+    background-color: $warning-hover-color
+
+%danger-style
+  color: #fff
+  background-color:  $danger-color
+  border: $danger-border
+  &:hover
+    background-color: $danger-hover-color
+
+@mixin style($style-name)
+  @extend %#{$style-name}-style
+
+@each $style in $styles
+  .btn.btn-#{$style}
+    @include style($style)
+

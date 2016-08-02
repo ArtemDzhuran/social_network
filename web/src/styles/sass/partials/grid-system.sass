@@ -1,0 +1,31 @@
+@import ../globals/global-variables
+
+@mixin width($screen-type)
+  $col-count: 12
+  @for $col-index from 1 through $col-count
+    .col-#{$screen-type}-#{$col-index}
+      float: left
+      display: block
+      width: percentage($col-index/$col-count)
+    .col-#{$screen-type}-offset-#{$col-index}
+      float: left
+      margin-left: percentage($col-index/$col-count)
+
+@media (min-width: $sm-screen-min-width)
+  @include width('sm')
+
+@media (min-width: $md-screen-min-width)
+  @include width('md')
+
+@media (min-width: $lg-screen-min-width)
+  @include width('lg')
+
+
+
+.row
+  display: block
+  margin-bottom: 15px
+  &:after
+    content: ''
+    display: block
+    clear: both
